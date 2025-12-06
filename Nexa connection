@@ -1,0 +1,61 @@
+## Network Connection – Kuunganisha na Mother Source
+
+Nexas ina kipengele cha Network Connection kinachohakikisha app inaunganika salama na **mother source** kwa ajili ya kusawazisha profiles, thresholds, na arifa. Kitambulisho cha chanzo (mfano: `Mama1956407897`) hutumika kama sehemu ya configuration na huhifadhiwa kwa usalama.
+
+### Vipengele vya Kuunganisha na Mother Source
+- **Connectivity check:** Mfumo hukagua kama kuna internet (Wi‑Fi/Data) kabla ya kuwasiliana na mother source.
+- **Secure requests:** Mawasiliano hufanywa juu ya HTTPS na hutumia API key/token kwa uthibitisho.
+- **Retries & timeouts:** Jaribio la kurudia maombi na muda wa mwisho ili kuzuia kukwama.
+- **Config‑driven:** Vigezo kama `mother_source_id`, `api_base_url`, na `api_key` vinawekwa kwenye `.env` au Encrypted Storage.
+- **Offline‑first:** Ikikosa mtandao, data huhifadhiwa local na kusawazishwa baadaye.
+
+### Chaguzi za Configuration
+| Chaguo             | Maelezo                                      | Mfano                  |
+|--------------------|-----------------------------------------------|------------------------|
+| `mother_source_id` | Kitambulisho cha chanzo cha data              | Mama1956407897         |
+| `api_base_url`     | URL ya chanzo cha data                        | https://mother.source/api |
+| `api_key`          | Token ya ufikiaji (hifadhi kwa usalama)       | (env variable)         |
+| `request_timeout`  | Muda wa mwisho wa ombi                        | 15s – 30s              |
+| `retry_policy`     | Idadi ya majaribio ya kurudia ombi            | Exponential backoff x3 |
+
+### Mfano wa Pseudo‑Code (Android/Kotlin)
+```kotlin
+fun hasInternet(context: Context): Boolean {
+    val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val network = cm.activeNetwork ?: return false
+    val caps = cm.getNetworkCapabilities(network) ?: return false
+    return caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+}
+
+data class MotherSourceConfig(
+    val motherSourceId: String = "Mama1956407897",
+    val apiBaseUrl: String = "https://mother.source/api",
+    val apiKey: String = System.getenv("NEXAS_API_KEY") ?: ""
+)
+
+fun syncProfiles(context: Context) {
+    if (!hasInternet(context)) {
+        cacheSyncRequest("profiles")
+        return
+    }
+
+    val cfg = MotherSourceConfig()
+    val client = OkHttpClient.Builder()
+        .connectTimeout(15, TimeUnit.SECONDS)
+        .readTimeout(20, TimeUnit.SECONDS)
+        .build()
+
+    val request = Request.Builder()
+        .url("${cfg.apiBaseUrl}/profiles?source=${cfg.motherSourceId}")
+        .addHeader("Authorization", "Bearer ${cfg.apiKey}")
+        .build()
+
+    client.newCall(request).execute().use { resp ->
+        if (resp.isSuccessful) {
+            saveProfilesLocally(resp.body?.string().orEmpty())
+            notifyUser("Profiles updated from mother source.")
+        } else {
+            notifyUser("Sync failed. Will retry.")
+        }
+    }
+}￼Enter
