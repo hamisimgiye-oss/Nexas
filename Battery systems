@@ -1,0 +1,37 @@
+## Battery Systems
+
+Battery Systems ni kipengele cha Nexas kinachodhibiti na kufuatilia hali ya betri kwa usalama na ufanisi. Mfumo huu unahakikisha mtumiaji anapata taarifa sahihi kuhusu kiwango cha chaji, afya ya betri, overheating, na uwezo wa betri. Pia unajumuisha simulation ya kuchaji kwa muda mfupi (mfano sekunde 5) ili kuonyesha utendaji wa mfumo.
+
+### Vipengele vya Battery Systems
+- **Full/Over‑Charging Detection:** Mfumo hutambua iwapo betri imefikia kiwango cha juu (100%) au imeanza kuchaji kupita kiasi, na hutoa arifa ili kulinda afya ya betri.
+- **Battery Health Monitoring:** Hufuatilia afya ya betri (Good, Overheat, Dead, Over Voltage, Failure) na kutoa taarifa kwa mtumiaji.
+- **Overheating Release:** Hutambua joto la betri na kutoa arifa ikizidi kiwango cha usalama (mfano >45°C).
+- **Charging Simulation (5 seconds):** Hutoa mfano wa kuchaji kwa sekunde 5 ili kuonyesha utendaji wa mfumo na kujaribu arifa.
+- **Battery Capacity Detection:** Hupima na kuonyesha uwezo wa betri (mAh) kwa kutumia BatteryManager properties.
+- **Integration:** Vipengele hivi vinaunganishwa na Smart Notifications na Auto‑Recharge ili kutoa arifa na kuchukua hatua kiotomatiki.
+
+### Faida kwa Mtumiaji
+- Hupata taarifa sahihi kuhusu afya na uwezo wa betri.
+- Hupunguza hatari ya kuharibu betri kwa kuchaji kupita kiasi au overheating.
+- Husaidia kuongeza muda wa maisha ya betri kwa kudhibiti cycles za chaji.
+- Hutoa urahisi wa kufuatilia betri bila kufungua app mara kwa mara.
+
+### Mfano wa Matumizi
+```kotlin
+val batterySystem = BatterySystem(context)
+
+if (batterySystem.isBatteryFullOrOver()) {
+    println("Battery is full or overcharging!")
+}
+
+println("Battery health: ${batterySystem.getBatteryHealth()}")
+
+if (batterySystem.isOverheating()) {
+    println("Battery overheating detected!")
+}
+
+batterySystem.chargeForFiveSeconds {
+    println("Charging simulation for 5 seconds complete.")
+}
+
+println("Battery capacity: ${batterySystem.getBatteryCapacity()} mAh")￼Enter
