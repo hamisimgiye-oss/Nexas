@@ -1,0 +1,28 @@
+## Settings
+
+Settings ni sehemu inayompa mtumiaji uwezo wa kubadilisha tabia ya Nexas kulingana na mapendeleo yake binafsi. Hii inahakikisha app inabaki rahisi kutumia na inalingana na mazingira tofauti ya mtumiaji.
+
+### Vipengele vya Settings
+- **Thresholds:** Weka kiwango cha chini (mfano 20%) na cha juu (mfano 80%) cha betri kwa arifa na auto‑recharge.
+- **Notifications:** Chagua aina ya arifa (sound, vibration, silent mode).
+- **Profiles:** Badilisha profile (Home, Travel, Night) kulingana na mazingira.
+- **Language:** Badilisha lugha ya interface (mfano Kiswahili ↔ English).
+- **Security:** Dhibiti ruhusa za data na encryption settings.
+- **Network:** Weka mother source ID (mfano `Mama1956407897`) na API key kwa mawasiliano salama.
+- **Battery Options:** Angalia afya ya betri, overheating alerts, na capacity display.
+
+### Jedwali la Settings
+| Kipengele        | Maelezo                                    | Mfano               |
+|------------------|---------------------------------------------|---------------------|
+| Thresholds       | Kiwango cha chini/juu cha betri             | 20% / 80%           |
+| Notifications    | Aina ya arifa                               | Sound / Vibration   |
+| Profiles         | Tabia za mazingira                          | Home / Travel / Night |
+| Language         | Lugha ya interface                          | Kiswahili / English |
+| Security         | Ruhusa na encryption                        | Enabled             |
+| Network          | Mother source ID na API key                 | Mama1956407897      |
+| Battery Options  | Afya, overheating, capacity                 | Good / 45°C / 4000mAh |
+
+### Faida kwa Mtumiaji
+- Urahisi wa kubadilisha tabia ya app bila kuingia kwenye code.
+- App inabaki rafiki na inayolingana na mazingira ya mtumiaji.
+- Husaidia kuongeza ufanisi na usalama wa betri.
