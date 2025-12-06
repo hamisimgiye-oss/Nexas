@@ -1,0 +1,18 @@
+## Profiles
+
+Profiles ni kipengele kinachowezesha mtumiaji kudhibiti tabia ya app kulingana na mazingira tofauti. Kila profile huweka kanuni za kuchaji, arifa, na auto‑recharge ili kuhakikisha matumizi bora na salama ya betri. Hii inarahisisha maisha ya mtumiaji kwa kumpa chaguo la haraka badala ya kubadilisha settings moja moja.
+
+### Aina za Profiles
+- **Home:** Chaji kamili na arifa zenye sauti. Inafaa kwa matumizi ya kawaida nyumbani.
+- **Travel:** Arifa fupi na auto‑recharge haraka ili kuhakikisha betri haishi wakati wa safari.
+- **Night:** Arifa kimya, auto‑recharge polepole, na vibration pekee ili kuepuka usumbufu wakati wa kulala.
+
+### Vipengele vya Profiles
+- **Customization:** Mtumiaji anaweza kubadilisha thresholds, vibration, sound, na lugha kwa kila profile.
+- **Quick switching:** Kubadilisha profile kwa haraka kulingana na mazingira.
+- **Integration:** Profiles hufanya kazi sambamba na Background Monitoring, Smart Notifications, na Auto‑Recharge.
+
+### Faida kwa Mtumiaji
+- Urahisi wa kudhibiti app bila kubadilisha settings moja moja.
+- Profiles hufanya app iwe rafiki na inayolingana na hali ya mtumiaji.
+- Husaidia kuongeza ufanisi na usalama wa betri kulingana na mazingira.
