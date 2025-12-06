@@ -1,0 +1,15 @@
+## Smart Notifications
+
+Smart Notifications ni kipengele kinachotuma arifa kwa mtumiaji mara tu kiwango cha betri kinapofikia viwango vilivyowekwa (thresholds). Arifa hizi zinaweza kuambatana na vibration, sauti, au lugha tofauti kulingana na chaguo la mtumiaji. Lengo ni kumfanya mtumiaji ajue hali ya betri kwa wakati, na kuamua hatua sahihi (kuchaji, kusimamisha, au kubadilisha profile).
+
+### Vipengele vya Smart Notifications
+- **Threshold alerts:** Arifa hutumwa ikifika kiwango cha chini (mfano 20%) au cha juu (mfano 80%).
+- **Custom vibration/sound:** Mtumiaji anaweza kuchagua aina ya vibration au sauti ya arifa.
+- **Language support:** Arifa zinaweza kuonyeshwa kwa Kiswahili au Kiingereza kulingana na settings.
+- **Profile‑based notifications:** Arifa hubadilika kulingana na profile iliyochaguliwa (Home, Travel, Night).
+- **Quick action integration:** Kutoka kwenye notification, mtumiaji anaweza kuchukua hatua haraka (Start, Pause, Boost).
+
+### Faida kwa Mtumiaji
+- Hupata taarifa kwa wakati bila kufungua app.
+- Anaweza kudhibiti jinsi arifa zinavyotolewa (kimya, mtikisiko, au sauti).
+- Arifa zinakuwa rafiki na zinazolingana na mazingira ya mtumiaji (mfano usiku kimya, mchana sauti).
