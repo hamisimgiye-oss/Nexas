@@ -1,0 +1,22 @@
+public class BatteryMonitorService extends Service {
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        registerReceiver(batteryReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+        return START_STICKY;
+    }
+
+    private BroadcastReceiver batteryReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+            int batteryPct = (int)((level / (float)scale) * 100);
+
+            if (batteryPct <= LOW_THRESHOLD) {
+                sendNotification("Battery low: " + batteryPct + "%");
+            } else if (batteryPct >= HIGH_THRESHOLD) {
+                triggerAutoRecharge();
+            }
+        }
+    };
+}
